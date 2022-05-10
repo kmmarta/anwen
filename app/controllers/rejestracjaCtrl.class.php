@@ -54,12 +54,7 @@ if (empty($this->form->nazwisko)) {
        
 
     }
-     public function validateEdit() {
-        //pobierz parametry na potrzeby wyswietlenia danych do edycji
-        //z widoku listy osób (parametr jest wymagany)
-        $this->form->id = ParamUtils::getFromCleanURL(1, true, 'Błędne wywołanie aplikacji');
-        return !App::getMessages()->isError();
-    }
+    
 
     public function action_rejestracjashow() {
         $this->generateView();
@@ -90,23 +85,22 @@ if (empty($this->form->nazwisko)) {
 
          public function action_osobarejestracja() {
         // 1. walidacja id osoby do edycji
-        if ($this->validateEdit()) {
+        $this->form->login= ParamUtils::getFromRequest("login");
+        $this->form->haslo= ParamUtils::getFromRequest("haslo");
+        $this->form->email= ParamUtils::getFromRequest("email");
             try {
-                // 2. odczyt z bazy danych osoby o podanym ID (tylko jednego rekordu)
-                $record = App::getDB()->get("osoba", "*", [
-                    "id_osoby" => $this->form->id_osoba
+              App::getDB()->insert("osoba",  [
+                    
+                        "login" => $this->form->login,
+                    "haslo" => $this->form->haslo,
+                    "email" => $this->form->email
                 ]);
-                // 2.1 jeśli osoba istnieje to wpisz dane do obiektu formularza
-                $this->form->id_osoby = $record['id_osoby'];
-                $this->form->login = $record['login'];
-                $this->form->nazwisko = $record['nazwisko'];
-                 $this->form->haslo = $record['haslo'];
-                $this->form->email = $record['email'];
+               
             } catch (\PDOException $e) {
                 Utils::addErrorMessage('Wystąpił błąd podczas odczytu rekordu');
                 if (App::getConf()->debug)
                     Utils::addErrorMessage($e->getMessage());
-            }
+            
         }
           // 3. Wygenerowanie widoku
         $this->generateView();

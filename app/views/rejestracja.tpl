@@ -8,7 +8,7 @@
 
 <body>
     <div class="row">
-        <form action="{$conf->action_root}osobarejestracja" method="post" class="pure-form pure-form-aligned">
+    
 			
 			<!-- Article main content -->
 			<article class="col-xs-12 maincontent">
@@ -25,28 +25,29 @@
 	<a href="{$conf->action_url}loginShow"  class="pure-menu-heading pure-menu-link"> zaloguj sie</a>
                                                         <hr>
 
-							<form>
+					    <form action="{$conf->action_root}osobarejestracja" method="post" class="pure-form pure-form-aligned">
+                                                
                                                             <div class="top-margin">
                                                                 <label>login<span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
+									<input name="login" type="text" class="form-control">
 								</div>
 								<div class="top-margin">
 									<label>Imie</label>
-									<input type="text" class="form-control">
+									<input name="imie" type="text" class="form-control">
 								</div>
 								<div class="top-margin">
 									<label>Nazwisko</label>
-									<input type="text" class="form-control">
+									<input name="nazwisko" type="text" class="form-control">
 								</div>
 								<div class="top-margin">
 									<label>Email  <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
+									<input name="email" type="text" class="form-control">
 								</div>
 
 								<div class="row top-margin">
 									<div class="col-sm-6">
 										<label>Hasło <span class="text-danger">*</span></label>
-										<input type="text" class="form-control">
+										<input name="haslo" type="text" class="form-control">
 									</div>
 									<div class="col-sm-6">
 										<label>Powtórz hasło <span class="text-danger">*</span></label>
@@ -61,15 +62,15 @@
 										
 									</div>
 									<div class="col-lg-4 text-right">
-										<button class="btn btn-action" type="submit">Rejestruj</button>
+										<input  class="btn btn-action" type="submit" value="Rejestruj"/>
 									</div>
 								</div>
 							</form>
 						</div>
 					</div>
-</form>	
+
 				</div>
-				
+                                                  
 			</article>
 			<!-- /Article -->
 
