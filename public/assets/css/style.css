@@ -1,0 +1,17 @@
+.alertSucces {
+    padding: 20px;
+    background-color: #15d37b;
+    color: white;
+}
+
+.alertError {
+    padding: 20px;
+    background-color: #bc063d;
+    color: white;
+}
+
+.alertWarning{
+    padding: 20px;
+    background-color: #ff9800;
+    color: white;
+}

@@ -1,4 +1,27 @@
-NAJLEPSZE RZECZY DO PIELEGNACJI WŁOSÓWDOCTYPE html>
+<?php
+/* Smarty version 4.1.0, created on 2022-05-19 23:00:26
+  from 'C:\xampp\htdocs\anwensklep\app\views\index.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.1.0',
+  'unifunc' => 'content_6286afeace4e94_67124224',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'e761635bb95109e2e2d1594f72f7bfdc9d912035' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\anwensklep\\app\\views\\index.tpl',
+      1 => 1652994022,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_6286afeace4e94_67124224 (Smarty_Internal_Template $_smarty_tpl) {
+?>NAJLEPSZE RZECZY DO PIELEGNACJI WŁOSÓWDOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -20,8 +43,12 @@ NAJLEPSZE RZECZY DO PIELEGNACJI WŁOSÓWDOCTYPE html>
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
-	<script src="assets/js/html5shiv.js"></script>
-	<script src="assets/js/respond.min.js"></script>
+	<?php echo '<script'; ?>
+ src="assets/js/html5shiv.js"><?php echo '</script'; ?>
+>
+	<?php echo '<script'; ?>
+ src="assets/js/respond.min.js"><?php echo '</script'; ?>
+>
 	<![endif]-->
 </head>
 
@@ -37,14 +64,20 @@ NAJLEPSZE RZECZY DO PIELEGNACJI WŁOSÓWDOCTYPE html>
 				<ul class="nav navbar-nav pull-right">
 					<li class="active"><a href="#">SKLEP</a></li>
                                 
-                                         <li><a href="{url action="about"}">Dlaczego pielegnować?</a></li>
+                                         <li><a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>"about"),$_smarty_tpl ) );?>
+">Dlaczego pielegnować?</a></li>
 					
-                                        <li><a href="{url action="produkty"}">PRODUKTY</a></li>
-                                         <li><a href="{url action="koszyk"}">KOSZYK</a></li>
+                                        <li><a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>"produkty"),$_smarty_tpl ) );?>
+">PRODUKTY</a></li>
+                                         <li><a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>"koszyk"),$_smarty_tpl ) );?>
+">KOSZYK</a></li>
 					
-					<li><a href="{url action="tajne"}">TAJNE</a></li>
-                                        
-					<li><a href="{url action="loginShow"}">Zaloguj/ Wyloguj</a></li>
+					<li><a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>"tajne"),$_smarty_tpl ) );?>
+">TAJNE</a></li>
+                                        	<li><a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>"tajne"),$_smarty_tpl ) );?>
+">TAJNE</a></li>
+					<li><a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>"loginShow"),$_smarty_tpl ) );?>
+">Zaloguj/ Wyloguj</a></li>
                                        
 				</ul>
 			</div><!--/.nav-collapse -->
@@ -59,7 +92,8 @@ NAJLEPSZE RZECZY DO PIELEGNACJI WŁOSÓWDOCTYPE html>
 				<h1 class="lead">Produkty do pielegnacji włosów.</h1>
                                 	
 				
-                                <p><a href="{url action="produkty"}"" class="btn btn-default btn-lg" role="button">ZOBACZ</a> </p>
+                                <p><a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>"produkty"),$_smarty_tpl ) );?>
+"" class="btn btn-default btn-lg" role="button">ZOBACZ</a> </p>
                                 
 			</div>
 		</div>
@@ -157,10 +191,21 @@ NAJLEPSZE RZECZY DO PIELEGNACJI WŁOSÓWDOCTYPE html>
 
 
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<script src="http://localhost/anwensklep/public/assets/js/headroom.min.js"></script>
-	<script src="http://localhost/anwensklep/public/assets/js/jQuery.headroom.min.js"></script>
-	<script src="http://localhost/anwensklep/public/assets/js/template.js"></script>
+	<?php echo '<script'; ?>
+ src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"><?php echo '</script'; ?>
+>
+	<?php echo '<script'; ?>
+ src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
+	<?php echo '<script'; ?>
+ src="http://localhost/anwensklep/public/assets/js/headroom.min.js"><?php echo '</script'; ?>
+>
+	<?php echo '<script'; ?>
+ src="http://localhost/anwensklep/public/assets/js/jQuery.headroom.min.js"><?php echo '</script'; ?>
+>
+	<?php echo '<script'; ?>
+ src="http://localhost/anwensklep/public/assets/js/template.js"><?php echo '</script'; ?>
+>
 </body>
-</html>
+</html><?php }
+}
