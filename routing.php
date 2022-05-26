@@ -9,17 +9,17 @@ App::getRouter()->setLoginRoute('login'); #action to forward if no permissions
 Utils::addRoute('hello', 'HelloCtrl');
 //Utils::addRoute('action_name', 'controller_class_name');
 Utils::addRoute('nowa', 'NowyKontroler');
-//dodanie nowego kontrolera stan aplikacji:do dupy
+//dodanie nowego kontrolera stan aplikacji:
 Utils::addRoute('about', 'aboutCtrl');
-//dodanie nowego kontrolera stan aplikacji:do dupy v2
+//dodanie nowego kontrolera stan aplikacji
 Utils::addRoute('tajne', 'TajneCtrl');
-//dodanie nowego kontrolera stan aplikacji:do dupy v3
+//dodanie nowego kontrolera stan aplikacj
 Utils::addRoute('index', 'indexCtrl');
-//dodanie nowego kontrolera stan aplikacji:do dupy v4
+//dodanie nowego kontrolera stan aplikacji
 
 
 Utils::addRoute('rejestracja', 'rejestracjaCtrl');
-//dodanie nowego kontrolera stan aplikacji:do dupy 
+//dodanie nowego kontrolera stan aplikacji
  
 //Utils::addRoute('koszyk',     'sidebarLeftCtrl'); 
 Utils::addRoute('koszykDodaj',     'sidebarLeftCtrl'); 
@@ -37,7 +37,7 @@ Utils::addRoute('adminLogin', 'LoginCtrl');
 Utils::addRoute('loginShow', 'LoginCtrl');
 Utils::addRoute('login', 'LoginCtrl');
 Utils::addRoute('logout', 'LoginCtrl', ['osoba', 'pracownik', 'admin']);
-//dej pan spokoj
+//
 
 
 
