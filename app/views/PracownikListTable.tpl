@@ -1,5 +1,4 @@
-
-{if !empty($pracownicy)}    
+{if !empty($employees)}    
 
     <table class="alt">
         <thead>
@@ -18,10 +17,10 @@
                         <td>{$emp['imie']}</td>
                         <td>{$emp['nazwisko']}</td>
                         <td>
-                            <a class="panelButton editButton" href="{url action="editPracownicy" PracownicyID= $emp['id_osoby']}">Edytuj</a>
+                            <a class="panelButton editButton" href="{url action="editPracownik" id_pracownik= $emp['id_osoby']}">Edytuj</a>
                             &nbsp;
-                            <a class="panelButton removeButton" href="{url action="deletePracownicy" PracownicyID= $emp['id_osoby']}"
-                               onclick="return confirm('Czy na pewno chcesz usunąć tego pracownika? \n{$emp['imie']} {$emp['nazwisko']}, ID: {$emp['id_osoby']}');">Usuń</a>
+                            <a class="panelButton removeButton" href="{url action="deletePracownik" id_pracownik= $emp['id_osoby']}"
+                               onclick="return confirm('Czy na pewno chcesz usunąć tego pracownika? \n{$emp['imie']} {$emp['nazwisko']}, ID: {$emp['id_user']}');">Usuń</a>
                         </td>
                     </tr>                              
                 {/strip}                        
@@ -34,26 +33,26 @@
         {if !($mode == "searching")}
             <div class="pagination">
                 {if !($page == 1)}
-                    <a href="{url action="showPracownicy" page=1}">&laquo;&laquo;</a>
+                    <a href="{url action="showPracownik" page=1}">&laquo;&laquo;</a>
                 {/if}
 
                 {if $page > 1}
-                    <a href="{url action="showPracownicy" page=$page-1}">&laquo;</a>
+                    <a href="{url action="showPracownik" page=$page-1}">&laquo;</a>
                 {/if}
 
                 {if isset($prevPage)}
-                    <a href="{url action="showPracownicy" page=$prevPage}">{$prevPage}</a>
+                    <a href="{url action="showPracownik" page=$prevPage}">{$prevPage}</a>
                 {/if}
 
-                <a href="{url action="showPracownicy" page=$page}" class="active">{$page}</a>
+                <a href="{url action="showPracownik" page=$page}" class="active">{$page}</a>
 
                 {if isset($nextPage)}
-                    <a href="{url action="showPracownicy" page=$nextPage}">{$nextPage}</a>
+                    <a href="{url action="showPracownik" page=$nextPage}">{$nextPage}</a>
                 {/if}
 
                 {if !($page == $max)}
-                    <a href="{url action="showPracownicy" page=$page+1}">&raquo;</a>
-                    <a href="{url action="showPracownicy" page=$max}">&raquo;&raquo;</a>            
+                    <a href="{url action="showPracownik" page=$page+1}">&raquo;</a>
+                    <a href="{url action="showPracownik" page=$max}">&raquo;&raquo;</a>            
                 {/if}
             </div>
         {/if}

@@ -22,7 +22,7 @@ Utils::addRoute('rejestracja', 'rejestracjaCtrl');
 //dodanie nowego kontrolera stan aplikacji
  
 //Utils::addRoute('koszyk',     'sidebarLeftCtrl'); 
-Utils::addRoute('koszykDodaj',     'sidebarLeftCtrl'); 
+Utils::addRoute('reservation',     'ReservationCtrl'); 
 Utils::addRoute('produkty',     'sidebarRightCtrl'); 
 //Utils::addRoute('zarejestrowano',     'LoginCtrl'); 
 
@@ -32,6 +32,7 @@ Utils::addRoute('osobarejestracja',    'RejestracjaCtrl');
 //ble 
 Utils::addRoute('adminLoginShow', 'LoginCtrl');
 Utils::addRoute('adminLogin', 'LoginCtrl');
+//Utils::addRoute('TajneAdminPanel', 'TajneAdminPanelCtrl', ['admin']);
 
 //ble logow
 Utils::addRoute('loginShow', 'LoginCtrl');
@@ -50,3 +51,6 @@ Utils::addRoute('addPracownicy', 'pracownicyEditCtrl', ['admin']);
 Utils::addRoute('editPracownicy', 'pracownicyEditCtrl', ['admin']);
 Utils::addRoute('savePracownicy', 'PracownicyEditCtrl', ['admin']);
 Utils::addRoute('deletePracownicy', 'PracownicyCtrl', ['admin']);
+//moje konto
+Utils::addRoute('MOJEKONTO', 'MOJEKONTOCtrl', ['osoba']);
+Utils::addRoute('showReservationDetails', 'EditReservationCtrl', ['osoba']);

@@ -42,7 +42,7 @@
                         <li><a href="{url action="about"}">Dlaczego pielegnować?</a></li>
 
                         <li><a href="{url action="produkty"}">PRODUKTY</a></li>
-                        <li><a href="{url action="koszyk"}">KOSZYK</a></li>
+                        <li><a href="{url action="reservation"}">REZERWACJA</a></li>
 
                         <li><a href="{url action="tajne"}">TAJNE</a></li>
                         <li><a href="{url action="loginShow"}">Zaloguj/ Wyloguj</a></li>
@@ -60,7 +60,7 @@
             {include file="messages.tpl"}
             <ol class="breadcrumb">
                 <li><a href="http://localhost/anwensklep/app/views/index.tpl">Sklep</a></li>
-                <li class="active">Produkty</li>
+                <li class="active">ZESTAWY</li>
             </ol>
 
             <div class="product-sec1">
@@ -73,7 +73,7 @@
 
                                 <div class="men-cart-pro">
                                     <div class="inner-men-cart-pro">
-                                        <a href="{url action="koszykDodaj" idProduktu=1}" class="link-product-add-cart">Dodaj do koszyka</a>
+                                        <a href="{url action="reservation" id_produkt=1}" class="link-product-add-cart">ZAREZERWUJ</a>
                                     </div>
 
                                 </div>
@@ -81,31 +81,20 @@
                             </div>
                             <div class="item-info-product">
                                 <h4>
-                                    <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl">Odżywka proteinowa do włosów wysokoporowatych </a>
+                                    <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl">ZESTAW ODŻYWEK DO WŁOSÓW WYSOKOPOROWATYCH </a>
                                 </h4>
                                 <div class="info-product-price">
                                     <div class="grid_meta">
                                         <div class="product_price">
                                             <div class="grid-price ">
-                                                <span class="money ">30.00zł</span>
-                                                <p><img src="{$conf->app_url}/assets/images/proteinowawysoko.jpg" alt="" class="img-rounded pull-right" width="300" > 
+                                                <span class="money ">CENA:80.00zł</span>
+                                                <p><img src="{$conf->app_url}/assets/images/wysoko.jpg" alt="" class="img-rounded pull-right" width="300" > 
                                             </div>
 
                                         </div>
 
                                     </div>
-                                    <div class="shoe single-item hvr-outline-out">
-                                        <form action="#" method="post">
-
-                                            <input type="hidden" name="add" value="1">
-                                            <input type="hidden" name="shoe_item" value="Odżywka proteinowa do włosów wysokoporowatych">
-                                            <input type="hidden" name="amount" value="30.00">
-
-
-                                            <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-                                        </form>
-
-                                    </div>
+         
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
@@ -119,487 +108,166 @@
 
                                 <div class="men-cart-pro">
                                     <div class="inner-men-cart-pro">
-                                        <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl" class="link-product-add-cart">Dodaj do koszyka</a>
+                                        <a href="{url action="reservation" id_produkt=2}" class="link-product-add-cart">ZAREZERWUJ</a>
                                     </div>
                                 </div>
 
                             </div>
                             <div class="item-info-product">
                                 <h4>
-                                    <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl">Odżywka emolientowa dla włosów wysokoporowatych </a>
+                                    <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl">ZESTAW ODŻYWEK DO WŁOSÓW ŚREDNIOPOROWATYCH </a>
                                 </h4>
                                 <div class="info-product-price">
                                     <div class="grid_meta">
                                         <div class="product_price">
                                             <div class="grid-price ">
-                                                <span class="money ">35.00zł</span>
-                                                <p><img src="{$conf->app_url}/assets/images/emolientowawysoko.jpg" alt="" class="img-rounded pull-right" width="300" > 
+                                                <span class="money ">CENA:80.00zł</span>
+                                                <p><img src="{$conf->app_url}/assets/images/srednioodzywki.jpg" alt="" class="img-rounded pull-right" width="300" > 
                                             </div>
                                         </div>
 
                                     </div>
-                                    <div class="shoe single-item hvr-outline-out">
-                                        <form action="#" method="post">
-
-                                            <input type="hidden" name="add" value="1">
-                                            <input type="hidden" name="shoe_item" value="Odżywka emolientowa dla włosów wysokoporowatych">
-                                            <input type="hidden" name="amount" value="35.00">
-
-
-
-                                        </form>
-
-                                    </div>
+                 
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 product-men">
+               <div class="col-md-4 product-men">
                     <div class="product-shoe-info shoe">
                         <div class="men-pro-item">
                             <div class="men-thumb-item">
 
                                 <div class="men-cart-pro">
                                     <div class="inner-men-cart-pro">
-                                        <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl" class="link-product-add-cart">Dodaj do koszyka</a>
+                                       <a href="{url action="reservation" id_produkt=3}" class="link-product-add-cart">ZAREZERWUJ</a>
                                     </div>
                                 </div>
 
                             </div>
                             <div class="item-info-product">
                                 <h4>
-                                    <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl">Szampon zwiększający objętość </a>
+                                    <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl">ZESTAW ODŻYWEK DO WŁOSÓW NISKOPOROWATYCH </a>
                                 </h4>
                                 <div class="info-product-price">
                                     <div class="grid_meta">
                                         <div class="product_price">
                                             <div class="grid-price ">
-                                                <span class="money ">35.00zł</span>
-                                                <p><img src="{$conf->app_url}/assets/images/szamponobjetosc.jpg" alt="" class="img-rounded pull-right" width="320" > 
+                                                <span class="money ">CENA:80.00zł</span>
+                                                <p><img src="{$conf->app_url}/assets/images/niskoodzywki.jpg" alt="" class="img-rounded pull-right" width="300" > 
                                             </div>
                                         </div>
 
                                     </div>
-                                    <div class="shoe single-item hvr-outline-out">
-                                        <form action="#" method="post">
-
-                                            <input type="hidden" name="add" value="1">
-                                            <input type="hidden" name="shoe_item" value="Szampon zwiększający objętość">
-                                            <input type="hidden" name="amount" value="35.00">
-
-
-                                            <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-                                        </form>
-
-                                    </div>
+                 
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 product-men">
+                                            <div class="col-md-4 product-men">
                     <div class="product-shoe-info shoe">
                         <div class="men-pro-item">
                             <div class="men-thumb-item">
 
                                 <div class="men-cart-pro">
                                     <div class="inner-men-cart-pro">
-                                        <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl" class="link-product-add-cart">Dodaj do koszyka</a>
+                                        <a href="{url action="reservation" id_produkt=4}" class="link-product-add-cart">ZAREZERWUJ</a>
                                     </div>
                                 </div>
 
                             </div>
                             <div class="item-info-product">
                                 <h4>
-                                    <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl">Odżywka nawilżająca dla każdej porowatości włosów</a>
+                                    <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl">ZESTAW  DO WŁOSÓW POROSTU WŁOSÓW </a>
                                 </h4>
                                 <div class="info-product-price">
                                     <div class="grid_meta">
                                         <div class="product_price">
                                             <div class="grid-price ">
-                                                <span class="money ">35.00zł</span>
-                                                <p><img src="{$conf->app_url}/assets/images/nawilzajaca.jpg" alt="" class="img-rounded pull-right" width="250" > 
+                                                <span class="money ">CENA:75.00zł</span>
+                                                <p><img src="{$conf->app_url}/assets/images/porostzestaw.jpg" alt="" class="img-rounded pull-right" width="300" > 
                                             </div>
                                         </div>
 
                                     </div>
-                                    <div class="shoe single-item hvr-outline-out">
-                                        <form action="#" method="post">
-                                            <input type="hidden" name="cmd" value="_cart">
-                                            <input type="hidden" name="add" value="1">
-                                            <input type="hidden" name="shoe_item" value="Odżywka nawilżająca dla każdej porowatości włosów">
-                                            <input type="hidden" name="amount" value="35.00">
-
-
-                                            <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-                                        </form>
-
-                                    </div>
+                 
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 product-men">
+<div class="col-md-4 product-men">
                     <div class="product-shoe-info shoe">
                         <div class="men-pro-item">
                             <div class="men-thumb-item">
 
                                 <div class="men-cart-pro">
                                     <div class="inner-men-cart-pro">
-                                        <a href="http://localhost/anwensklep/app/views/sidebarleft.tpl" class="link-product-add-cart">Dodaj do koszyka</a>
+                                      <a href="{url action="reservation" id_produkt=5}" class="link-product-add-cart">ZAREZERWUJ</a>
                                     </div>
                                 </div>
 
                             </div>
                             <div class="item-info-product">
                                 <h4>
-                                    <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl">Odżywka emolientowa dla włosów średnioporowatych </a>
+                                    <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl">ZESTAW ODŻYWEK DO PIELEGNACJI SKÓRY GŁOWY </a>
                                 </h4>
                                 <div class="info-product-price">
                                     <div class="grid_meta">
                                         <div class="product_price">
                                             <div class="grid-price ">
-                                                <span class="money ">35.00zł</span>
-                                                <p><img src="{$conf->app_url}/assets/images/emolientowasrednio.jpg" alt="" class="img-rounded pull-right" width="240" > 
+                                                <span class="money "> CENA:75.00zł</span>
+                                                <p><img src="{$conf->app_url}/assets/images/pielegnacjaskory.jpg" alt="" class="img-rounded pull-right" width="300" > 
                                             </div>
                                         </div>
 
                                     </div>
-                                    <div class="shoe single-item hvr-outline-out">
-                                        <form action="#" method="post">
-                                            <input type="hidden" name="cmd" value="_cart">
-                                            <input type="hidden" name="add" value="1">
-                                            <input type="hidden" name="shoe_item" value=">Odżywka emolientowa dla włosów średnioporowatych ">
-                                            <input type="hidden" name="amount" value="35.00">
-
-
-                                            <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-                                        </form>
-
-                                    </div>
+                 
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 product-men">
+                                            <div class="col-md-4 product-men">
                     <div class="product-shoe-info shoe">
                         <div class="men-pro-item">
                             <div class="men-thumb-item">
 
                                 <div class="men-cart-pro">
                                     <div class="inner-men-cart-pro">
-                                        <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl" class="link-product-add-cart">Dodaj do koszyka</a>
+                                       <a href="{url action="reservation" id_produkt=6}" class="link-product-add-cart">ZAREZERWUJ</a>
                                     </div>
                                 </div>
 
                             </div>
                             <div class="item-info-product">
                                 <h4>
-                                    <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl">Odżywka proteinowa dla włosów średnioporowatych</a>
+                                    <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl">ZESTAW ODŻYWEK DO WŁOSÓW BLOND </a>
                                 </h4>
                                 <div class="info-product-price">
                                     <div class="grid_meta">
                                         <div class="product_price">
                                             <div class="grid-price ">
-                                                <span class="money ">35.00zł</span>
-                                                <p><img src="{$conf->app_url}/assets/images/proteinowasrednio.jpg" alt="" class="img-rounded pull-right" width="297" > 
+                                                <span class="money ">CENA:95.00zł</span>
+                                                <p><img src="{$conf->app_url}/assets/images/zestawblond.jpg" alt="" class="img-rounded pull-right" width="300" > 
                                             </div>
                                         </div>
 
                                     </div>
-                                    <div class="shoe single-item hvr-outline-out">
-                                        <form action="#" method="post">
-                                            <input type="hidden" name="cmd" value="_cart">
-                                            <input type="hidden" name="add" value="1">
-                                            <input type="hidden" name="shoe_item" value="Odżywka proteinowa dla włosów średnioporowatych">
-                                            <input type="hidden" name="amount" value="35.00">
-
-
-                                            <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-                                        </form>
-
-                                    </div>
+                 
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 product-men">
-                    <div class="product-shoe-info shoe">
-                        <div class="men-pro-item">
-                            <div class="men-thumb-item">
-
-                                <div class="men-cart-pro">
-                                    <div class="inner-men-cart-pro">
-                                        <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl" class="link-product-add-cart">Dodaj do koszyka</a>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="item-info-product">
-                                <h4>
-                                    <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl">Odżywka emolientowa dla włosów niskoporowatych</a>
-                                </h4>
-                                <div class="info-product-price">
-                                    <div class="grid_meta">
-                                        <div class="product_price">
-                                            <div class="grid-price ">
-                                                <span class="money ">35.00zł</span>
-                                                <p><img src="{$conf->app_url}/assets/images/emolientowanisko.jpg" alt="" class="img-rounded pull-right" width="250" > 
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="shoe single-item hvr-outline-out">
-                                        <form action="#" method="post">
-                                            <input type="hidden" name="cmd" value="_cart">
-                                            <input type="hidden" name="add" value="1">
-                                            <input type="hidden" name="shoe_item" value="Odżywka emolientowa dla włosów niskoporowatych">
-                                            <input type="hidden" name="amount" value="35.00">
-
-
-                                            <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-                                        </form>
-
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 product-men">
-                    <div class="product-shoe-info shoe">
-                        <div class="men-pro-item">
-                            <div class="men-thumb-item">
-
-                                <div class="men-cart-pro">
-                                    <div class="inner-men-cart-pro">
-                                        <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl" class="link-product-add-cart">Dodaj do koszyka</a>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="item-info-product">
-                                <h4>
-                                    <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl">Odżywka proteinowa dla dzieci</a>
-                                </h4>
-                                <div class="info-product-price">
-                                    <div class="grid_meta">
-                                        <div class="product_price">
-                                            <div class="grid-price ">
-                                                <span class="money ">35.00zł</span>
-                                                <p><img src="{$conf->app_url}/assets/images/odzywkadladzieci.jpg" alt="" class="img-rounded pull-right" width="300" > 
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="shoe single-item hvr-outline-out">
-                                        <form action="#" method="post">
-                                            <input type="hidden" name="cmd" value="_cart">
-                                            <input type="hidden" name="add" value="1">
-                                            <input type="hidden" name="shoe_item" value="Odżywka proteinowa dla włosów niskoporowatych">
-                                            <input type="hidden" name="amount" value="375.00">
-
-
-                                            <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-                                        </form>
-
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 product-men">
-                    <div class="product-shoe-info shoe">
-                        <div class="men-pro-item">
-                            <div class="men-thumb-item">
-
-                                <div class="men-cart-pro">
-                                    <div class="inner-men-cart-pro">
-                                        <a href="http://localhost/anwensklep/app/views/sidebarLeft.html" class="link-product-add-cart">Dodaj do koszyka</a>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="item-info-product">
-                                <h4>
-                                    <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl">Odżywka Emoleintowa do włosów bez spłukiwania</a>
-                                </h4>
-                                <div class="info-product-price">
-                                    <div class="grid_meta">
-                                        <div class="product_price">
-                                            <div class="grid-price ">
-                                                <span class="money ">35.00zł</span>
-                                                <p><img src="{$conf->app_url}/assets/images/emolientowabezsplukiwania.jpg" alt="" class="img-rounded pull-right" width="200" > 
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="shoe single-item hvr-outline-out">
-                                        <form action="#" method="post">
-                                            <input type="hidden" name="cmd" value="_cart">
-                                            <input type="hidden" name="add" value="1">
-                                            <input type="hidden" name="shoe_item" value="Odżywka Emoleintowa do włosów bez spłukiwania">
-                                            <input type="hidden" name="amount" value="35.00">
-
-
-                                            <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-                                        </form>
-
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 product-men">
-                    <div class="product-shoe-info shoe">
-                        <div class="men-pro-item">
-                            <div class="men-thumb-item">
-
-                                <div class="men-cart-pro">
-                                    <div class="inner-men-cart-pro">
-                                        <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl" class="link-product-add-cart">Dodaj do koszyka</a>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="item-info-product">
-                                <h4>
-                                    <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl">Wcierka do włosów</a>
-                                </h4>
-                                <div class="info-product-price">
-                                    <div class="grid_meta">
-                                        <div class="product_price">
-                                            <div class="grid-price ">
-                                                <span class="money ">35.00zł</span>
-                                                <p><img src="{$conf->app_url}/assets/images/wcierka.jpg" alt="" class="img-rounded pull-right" width="350" > 
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="shoe single-item hvr-outline-out">
-                                        <form action="#" method="post">
-                                            <input type="hidden" name="cmd" value="_cart">
-                                            <input type="hidden" name="add" value="1">
-                                            <input type="hidden" name="shoe_item" value="Wcierka do włosów">
-                                            <input type="hidden" name="amount" value="35.00">
-
-
-                                            <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-                                        </form>
-
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 product-men">
-                    <div class="product-shoe-info shoe">
-                        <div class="men-pro-item">
-                            <div class="men-thumb-item">
-
-                                <div class="men-cart-pro">
-                                    <div class="inner-men-cart-pro">
-                                        <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl" class="link-product-add-cart">Dodaj do koszyka</a>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="item-info-product">
-                                <h4>
-                                    <a href="http://localhost/anwensklep/app/views/single.tpl">Maska do włosów średnioporowatych 'winogrono i keratyna'</a>
-                                </h4>
-                                <div class="info-product-price">
-                                    <div class="grid_meta">
-                                        <div class="product_price">
-                                            <div class="grid-price ">
-                                                <span class="money ">35.00zł</span>
-                                                <p><img src="{$conf->app_url}/assets/images/winogrono.jpg" alt="" class="img-rounded pull-right" width="300" > 
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="shoe single-item hvr-outline-out">
-                                        <form action="#" method="post">
-                                            <input type="hidden" name="cmd" value="_cart">
-                                            <input type="hidden" name="add" value="1">
-                                            <input type="hidden" name="shoe_item" value="Maska do włosów średnioporowatych 'winogrono i keratyna'">
-                                            <input type="hidden" name="amount" value="35.00">
-
-
-                                            <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-                                        </form>
-
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 product-men">
-                    <div class="product-shoe-info shoe">
-                        <div class="men-pro-item">
-                            <div class="men-thumb-item">
-
-                                <div class="men-cart-pro">
-                                    <div class="inner-men-cart-pro">
-                                        <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl" class="link-product-add-cart">Dodaj do koszyka</a>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="item-info-product">
-                                <h4>
-                                    <a href="http://localhost/anwensklep/app/views/sidebarLeft.tpl">Szampon pomarańcza i bergamotka do normalnej i przetłuszczającej się skóry</a>
-                                </h4>
-                                <div class="info-product-price">
-                                    <div class="grid_meta">
-                                        <div class="product_price">
-                                            <div class="grid-price ">
-                                                <span class="money ">35.00zł</span>
-                                                <p><img src="{$conf->app_url}/assets/images/pomarancza.jpg" alt="" class="img-rounded pull-right" width="300" > 
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="shoe single-item hvr-outline-out">
-                                        <form action="#" method="post">
-                                            <input type="hidden" name="cmd" value="_cart">
-                                            <input type="hidden" name="add" value="1">
-                                            <input type="hidden" name="shoe_item" value="Szampon pomarańcza i bergamotka do normalnej i przetłuszczającej się skóry">
-                                            <input type="hidden" name="amount" value="35.00">
-
-
-                                            <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-                                        </form>
-
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
+                                             </div>
+                                             </div>
         <!-- /Article -->
 
         <!-- Sidebar -->

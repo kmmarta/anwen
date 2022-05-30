@@ -26,29 +26,8 @@
 </head>
 
 <body>
-	<!-- Fixed navbar -->
-	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
-		<div class="container">
-			<div class="navbar-header">
-				<!-- Button for smallest screens -->
-				
-		</div>
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav pull-right">
-					<li class="active"><a href="#">SKLEP</a></li>
-                                    
-                                         <li><a href="{url action="about"}">Dlaczego pielegnować?</a></li>
-					
-                                        <li><a href="{url action="produkty"}">PRODUKTY</a></li>
-                                         <li><a href="{url action="koszyk"}">KOSZYK</a></li>
-					
-					<li><a href="{url action="tajne"}">TAJNE</a></li>
-					<li><a href="{url action="loginShow"}">Zaloguj/ Wyloguj</a></li>
-                                       
-				</ul>
-			</div><!--/.nav-collapse -->
-		</div>
-	</div> 
+		<!-- Fixed navbar -->
+	{include file="navbar.tpl"}
 	<!-- /.navbar -->
 
 	<header id="head" class="secondary"></header>
@@ -90,57 +69,8 @@
 	</div>	<!-- /container -->
 	
 
-	<footer id="footer" class="top-space">
 
-		<div class="footer1">
-			<div class="container">
-				<div class="row">
-					
-					<div class="col-md-3 widget">
-						<h3 class="widget-title">Contact</h3>
-						<div class="widget-body">
-							<p>+234 23 9873237<br>
-								<a href="mailto:#">some.email@somewhere.com</a><br>
-								<br>
-								
-							</p>	
-						</div>
-					</div>
-
-				
-
-				</div> <!-- /row of widgets -->
-			</div>
-		</div>
-
-		<div class="footer2">
-			<div class="container">
-				<div class="row">
-					
-					<div class="col-md-6 widget">
-						<div class="widget-body">
-							<p class="simplenav">
-								<a href="#">Strona główna</a> | 
-								<a href="{url action="about"}">Dlaczego pielegnować?</a> |
-								<a href="{url action="produkty"}">Produkty</a> |
-								<a href="{url action="tajne"}">tajne</a> |
-								<b><a href="{url action="loginShow"}">Zaloguj</a></b>
-							</p>
-						</div>
-					</div>
-
-					<div class="col-md-6 widget">
-						<div class="widget-body">
-							<p class="text-right">
-								Copyright &copy; 2014, Your name. Designed by <a href="http://gettemplate.com/" rel="designer">gettemplate</a> 
-							</p>
-						</div>
-					</div>
-
-				</div> <!-- /row of widgets -->
-			</div>
-		</div>
-	</footer>	
+	{include file="footer.tpl"}
 		
 
 

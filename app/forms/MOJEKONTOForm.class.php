@@ -2,8 +2,13 @@
 
 namespace app\forms;
 
-class ControlPanelForm {
+class MOJEKONTOForm {
 
+    //user data
+    public $imie;
+    public $nazwisko;
+
+    
     //pasword
     public $oldPassword;
     public $haslo;

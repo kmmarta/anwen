@@ -1,4 +1,4 @@
-ass<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -35,9 +35,10 @@ ass<!DOCTYPE html>
 	<header id="head">
 		<div class="container">
 			<div class="row">
-				<h1 class="lead">Produkty do pielegnacji włosów.</h1>
+				<h1 class="lead">Zestawy do pielegnacji włosów.</h1>
+                                <h1 class="lead">UWAGA!REALIZUJEMY ZAMÓWIENIA NA MIEJSCU!</h1>
 				
-                                <p><a href="{url action="produkty"}"" class="btn btn-default btn-lg" role="button">ZOBACZ</a> </p
+                                <p><a href="{url action="produkty"}"" class="btn btn-default btn-lg" role="button">ZOBACZ ZESTAWY</a> </p
                                 
 			</div>
 		</div>
@@ -48,8 +49,8 @@ ass<!DOCTYPE html>
 	<div class="container text-center">
 		<br> <br>
                  {include file="messages.tpl"}
-		<h2 class="thin">Najlepsze produkty do pielegnacji włosów</h2>
-		
+		<h2 class="thin">Najlepsze zestawy do pielegnacji włosów</h2>
+		<h2 class="thin">Nasze zestawy realizujemy na  miejscu,płatność przy odbiorze zarezerwowanego zamówienia</h2>
 	</div>
 	<!-- /Intro-->
 		

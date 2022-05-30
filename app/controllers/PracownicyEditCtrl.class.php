@@ -1,42 +1,42 @@
-
 <?php
+
 namespace app\controllers;
 
 use core\App;
-use app\forms\EditPracownicyForm;
+use app\forms\PracownicyEditForm;
 use app\utils\PaginationInfo;
 use core\Utils;
 use core\ParamUtils;
 use core\SessionUtils;
 
-class pracownicyEditCtrl {
+class PracownicyEditCtrl {
 
-    private $pracownicy;
+    private $pracownik;
     private $page;
 
     public function __construct() {
-        $this->form = new pracownicyEditForm();
+        $this->form = new PracownikEditForm();
     }
 
-    public function action_showPracownicy() {
+    public function action_showPracownik() {
         if ($this->validatePagination()) {
 
             $this->paginationInfo = new PaginationInfo($this->page, 3, "role_details", "ROLE_id_role", 2, null, null);
 
             if ($this->paginationInfo->count == 0) {
-                $this->pracownicy = null;
+                $this->pracownik = null;
             } else {
                 if ($this->page > $this->paginationInfo->max) {
-                    App::getRouter()->redirectTo('showPracownicy/1');
+                    App::getRouter()->redirectTo('showPracownik/1');
                     exit();
                 }
 
                 try {
                     $ids = App::getDB()->select("role_details", [
-                        "OSOBA_id_osoby"], ["ROLE_id_role" => 12, "LIMIT" => [$this->paginationInfo->offset, $this->paginationInfo->size]]);
+                        "OSOBA_id_osoby"], ["ROLE_id_role" => 2, "LIMIT" => [$this->paginationInfo->offset, $this->paginationInfo->size]]);
                     foreach ($ids as $id) {
-                        $this->pracownicy[] = App::getDB()->get("osoba", [
-                            "id_odoby", "imie", "nazwisko"], ["id_osoby" => $id]);
+                        $this->pracownik[] = App::getDB()->get("osoba", [
+                            "id_osoby", "imie", "nazwisko"], ["id_osoby" => $id]);
                     }
                 } catch (\PDOException $e) {
                     Utils::addErrorMessage('Wystąpił nieoczekiwany błąd');
@@ -54,7 +54,7 @@ class pracownicyEditCtrl {
 
             App::getSmarty()->assign('mode', "");
 
-            App::getSmarty()->assign('pracownicy', $this->pracownicy);
+            App::getSmarty()->assign('pracownik', $this->pracownik);
 
             App::getSmarty()->assign('page', $this->page);
             App::getSmarty()->assign('prevPage', $this->paginationInfo->prevPage);
@@ -63,15 +63,15 @@ class pracownicyEditCtrl {
             App::getSmarty()->assign('max', $this->paginationInfo->max);
 
             App::getSmarty()->assign('page_title', "Lista pracowników");
-            App::getSmarty()->display('PracownicyListTable.tpl');
+            App::getSmarty()->display('PracownikList.tpl');
         }
     }
 
-    public function action_searchPracownicy() {
-        $id = ParamUtils::getFromRequest("sf_PracownicyID");
+    public function action_searchPracownik() {
+        $id = ParamUtils::getFromRequest("sf_id_pracownik");
 
         if (empty($id) || !is_numeric($id)) {
-            App::getRouter()->redirectTo('showPracownicy/1');
+            App::getRouter()->redirectTo('showPracownik/1');
             exit();
         }
 
@@ -82,15 +82,15 @@ class pracownicyEditCtrl {
         $this->paginationInfo = new PaginationInfo($this->page, 1, "role_details", "ROLE_id_role", 2, null, null);
 
         if ($page > $this->paginationInfo->max) {
-            App::getRouter()->redirectTo('showPracownicy/1');
+            App::getRouter()->redirectTo('showPracownik/1');
             exit();
         }
 
         try {
-            $pracownicyID = App::getDB()->get("role_details", [
+            $empID = App::getDB()->get("role_details", [
                 "OSOBA_id_osoby"], ["ROLE_id_role" => 2, "OSOBA_id_osoby" => $id, "LIMIT" => [$this->paginationInfo->offset, $this->paginationInfo->size]]);
-            $pracownicy = App::getDB()->select("osoba", [
-                "id_osoby", "imie", "nazwisko"], ["id_osoby" => $pracownicyID]);
+            $employees = App::getDB()->select("user", [
+                "id_osoba", "IMIE", "nazwisko"], ["id_osoby" => $empID]);
         } catch (\PDOException $e) {
             Utils::addErrorMessage('Wystąpił nieoczekiwany błąd');
             if (App::getConf()->debug) {
@@ -103,108 +103,108 @@ class pracownicyEditCtrl {
 
         App::getSmarty()->assign('mode', "searching");
 
-        App::getSmarty()->assign('pracownicy', $pracownicy);
+        App::getSmarty()->assign('pracownik', $pracownik);
 
         App::getSmarty()->assign('page_title', "Lista pracowników");
-        App::getSmarty()->display('PracownicyListTable.tpl');
+        App::getSmarty()->display('PPracownikListTable.tpl');
     }
 
-    public function action_editPracownicy() {
+    public function action_editPracownik() {
         if ($this->validate()) {
             try {
                 $record = App::getDB()->get("osoba", [
-                    "id_osoby", "imie", "nazwisko", "email"], ["id_osoby" => $this->form->pracownicyID]);
+                    "id_osoby", "imie", "surname", "email"], ["id_osoby" => $this->form->id_pracownik]);
             } catch (\PDOException $e) {
                 Utils::addErrorMessage('Wystąpił nieoczekiwany błąd podczas rejestracji');
                 if (App::getConf()->debug) {
                     Utils::addErrorMessage($e->getMessage());
                 }
                 SessionUtils::storeMessages();
-                App::getRouter()->redirectTo('tajne');
+                App::getRouter()->redirectTo('adminPanel');
                 exit();
             }
 
 
-            $this->form->pracownicyID = $record['id_osoby'];
+            $this->form->id_pracownik = $record['id_osoby'];
             $this->form->imie = $record['imie'];
             $this->form->nazwisko = $record['nazwisko'];
             $this->form->email = $record['email'];
-       
+    
 
             App::getSmarty()->assign("prevPage", SessionUtils::load("currentPage", false));
             App::getSmarty()->assign('form', $this->form);
             App::getSmarty()->assign('page_title', "Edytuj pracownika");
-            App::getSmarty()->display('AdminEditPracownicyView.tpl');
+            App::getSmarty()->display('AdminPracownikEditView.tpl');
         }
     }
 
-    public function action_savePracownicy() {
+    public function action_savePracownik() {
         if ($this->validateSave()) {
             try {
                 App::getDB()->update("osoba", [
                     "imie" => $this->form->imie,
                     "nazwisko" => $this->form->nazwisko,
-                 
+                   
                     "email" => $this->form->email,
-                    "who_modified" => SessionUtils::load("userID", true)
-                        ], ["id_osoby" => $this->form->pracownicyID]);
+                    "who_modified" => SessionUtils::load("id_osoby", true)
+                        ], ["id_osoby" => $this->form->id_pracownik]);
             } catch (\PDOException $e) {
                 Utils::addErrorMessage('Wystąpił nieoczekiwany błąd podczas edycji danych');
                 if (App::getConf()->debug) {
                     Utils::addErrorMessage($e->getMessage());
                 }
                 SessionUtils::storeMessages();
-                App::getRouter()->redirectTo('tajne');
+                App::getRouter()->redirectTo('adminPanel');
                 exit();
             }
             Utils::addInfoMessage('Pomyślnie edytowano dane');
             SessionUtils::storeMessages();
-            App::getRouter()->redirectTo('tajne');
+            App::getRouter()->redirectTo('adminPanel');
             exit();
         }
     }
 
-    public function action_deletePracownicy() {
+    public function action_deletePracownik() {
         if ($this->validate()) {
             try {
-                App::getDB()->delete("role_details", ["OSOBA_id_osoby" => $this->form->pracownicyID]);
+                App::getDB()->delete("role_details", ["OSOBA_id_osoby" => $this->form->id_pracownik]);
             } catch (\PDOException $e) {
                 Utils::addErrorMessage('Wystąpił nieoczekiwany błąd podczas usuwania pracownika');
                 if (App::getConf()->debug) {
                     Utils::addErrorMessage($e->getMessage());
                 }
                 SessionUtils::storeMessages();
-                App::getRouter()->redirectTo('tajne');
+                App::getRouter()->redirectTo('adminPanel');
                 exit();
             }
             try {
-                App::getDB()->delete("osoba", ["id_osoby" => $this->form->pracownicyID]);
+                App::getDB()->delete("osoba", ["id_osoby" => $this->form->id_pracownik]);
             } catch (\PDOException $e) {
                 Utils::addErrorMessage('Wystąpił nieoczekiwany błąd podczas usuwania pracownika');
                 if (App::getConf()->debug) {
                     Utils::addErrorMessage($e->getMessage());
                 }
                 SessionUtils::storeMessages();
-                App::getRouter()->redirectTo('tajne');
+                App::getRouter()->redirectTo('adminPanel');
                 exit();
             }
             Utils::addInfoMessage("Pomyślnie usunięto pracownika");
             SessionUtils::storeMessages();
-            App::getRouter()->redirectTo('tajne');
+            App::getRouter()->redirectTo('adminPanel');
             exit();
         }
     }
 
-    public function action_addPracownicy() {
+    public function action_addPracownik() {
         $this->form->imie = trim(ParamUtils::getFromRequest('imie'));
-        $this->form->nazwisko = trim(ParamUtils::getFromRequest('nawisko'));
-    
+        $this->form->nazwisko = trim(ParamUtils::getFromRequest('nazwisko'));
+
         $this->form->email = ParamUtils::getFromRequest('email');
 
-        if (empty($this->form->imie) || empty($this->form->nazwisko)  || empty($this->form->email)) {
+        if (empty($this->form->imie) || empty($this->form->nazwisko) || empty($this->form->email)) {
             Utils::addErrorMessage('Błąd - brak parametrów');
             SessionUtils::storeMessages();
-            App::getRouter()->redirectTo('tajne');
+            App::getRouter()->redirectTo('adminPanel');
             exit();
         } else {
 
@@ -214,22 +214,16 @@ class pracownicyEditCtrl {
                 exit();
             }
 
-            $expiry = 1 * 1 * 60 * 60;
-            $activation_expiry = time() + $expiry;
-            $activation_expiry = date('Y-m-d H:i:s', $activation_expiry);
-
-         
 
             try {
                 App::getDB()->insert("osoba", [
                     "imie" => $this->form->imie,
                     "nazwisko" => $this->form->nazwisko,
-                  
+                 
                     "email" => $this->form->email,
                     "who_modified" => SessionUtils::load("id_osoby", true),
-                    "activation_expiry" => $activation_expiry,
-                    "activation_start" => date('Y-m-d H:i:s'),
                  
+              
                 ]);
             } catch (\PDOException $e) {
                 Utils::addErrorMessage('Wystąpił nieoczekiwany błąd podczas rejestracji');
@@ -237,45 +231,41 @@ class pracownicyEditCtrl {
                     Utils::addErrorMessage($e->getMessage());
                 }
                 SessionUtils::storeMessages();
-                App::getRouter()->redirectTo('tajne');
+                App::getRouter()->redirectTo('adminPanel');
                 exit();
             }
 
-            Utils::addInfoMessage('Link aktywujący konto pracownika został wysłany.');
-            SessionUtils::storeMessages();
-            App::getRouter()->redirectTo('tajne');
-            exit();
+      
         }
     }
 
-   
 
     private function validate() {
-        $this->form->pracownicyID = ParamUtils::getFromCleanURL(1);
+        $this->form->id_pracownik = ParamUtils::getFromCleanURL(1);
 
-        if (empty($this->form->pracownicyID)) {
+        if (empty($this->form->employeeID)) {
             Utils::addErrorMessage('Brak podanego ID pracownika');
             SessionUtils::storeMessages();
-            App::getRouter()->redirectTo('tajne');
+            App::getRouter()->redirectTo('adminPanel');
             exit();
         }
 
         try {
-            $str = App::getDB()->get("osoba", "login", ["id_osoby" => $this->form->pracownicyID]);
+            $str = App::getDB()->get("osoba", "login", ["id_osoby" => $this->form->id_pracownik]);
         } catch (\PDOException $e) {
             Utils::addErrorMessage('Wystąpił nieoczekiwany błąd');
             if (App::getConf()->debug) {
                 Utils::addErrorMessage($e->getMessage());
             }
             SessionUtils::storeMessages();
-            App::getRouter()->redirectTo('tajne');
+            App::getRouter()->redirectTo('adminPanel');
             exit();
         }
 
         if (empty($str)) {
             Utils::addErrorMessage('Pracownik nie istnieje');
             SessionUtils::storeMessages();
-            App::getRouter()->redirectTo('tajne');
+            App::getRouter()->redirectTo('adminPanel');
             exit();
         }
         return true;
@@ -286,7 +276,7 @@ class pracownicyEditCtrl {
             $paramArray = [];
             $paramArray[] = $this->form->imie = trim(ParamUtils::getFromRequest('imie'));
             $paramArray[] = $this->form->nazwisko = trim(ParamUtils::getFromRequest('nazwisko'));
-          
+        
             $paramArray[] = $this->form->email = trim(ParamUtils::getFromRequest('email'));
 
 
@@ -301,7 +291,7 @@ class pracownicyEditCtrl {
             if ($empty) {
                 Utils::addErrorMessage('Błąd - brak danych o pracowniku');
                 SessionUtils::storeMessages();
-                App::getRouter()->redirectTo("tajne");
+                App::getRouter()->redirectTo("adminPanel");
                 exit();
             }
             return true;
@@ -317,7 +307,7 @@ class pracownicyEditCtrl {
                 Utils::addErrorMessage($e->getMessage());
             }
             SessionUtils::storeMessages();
-            App::getRouter()->redirectTo('tajne');
+            App::getRouter()->redirectTo('adminPanel');
             exit();
         }
         if (!empty($id)) {
@@ -327,10 +317,7 @@ class pracownicyEditCtrl {
         }
     }
 
-    private function generateCode($chars) {
-        $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz!@#$%^&*=+/<>';
-        return substr(str_shuffle($data), 0, $chars);
-    }
+ 
 
     private function validatePagination() {
         $this->page = ParamUtils::getFromCleanURL(1);
@@ -341,5 +328,3 @@ class pracownicyEditCtrl {
     }
 
 }
-                                        
-                  

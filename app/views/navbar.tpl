@@ -13,9 +13,10 @@
                 <li><a href="{url action="about"}">Dlaczego pielegnować?</a></li>
 
                 <li><a href="{url action="produkty"}">PRODUKTY</a></li>
-                <li><a href="{url action="koszyk"}">KOSZYK</a></li>
+                <li><a href="{url action="reservation"}">KOSZYK</a></li>
 
-                <li><a href="{url action="tajne"}">TAJNE</a></li>
+                <li><a href="{url action="TajneAdminPanel"}">TAJNE</a></li>
+                   <li><a href="{url action="MOJEKONTO"}">Moje konto</a></li>
                
                     {if count($conf->roles)>0}
                     <li><a href="{url action="logout"}">Wylogujj się</a></li>

@@ -143,6 +143,7 @@ class LoginCtrl {
 
     public function action_login() {
         if (RoleUtils::inRole('osoba') || RoleUtils::inRole('admin') || RoleUtils::inRole('pracownik')) {
+        $id = App::getDB()->select("osoba","id_osoby",["login" => [$this->form->login]]);
             App::getRouter()->redirectTo("hello");
         } else {
 

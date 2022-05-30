@@ -1,16 +1,16 @@
-
 <?php
 
 namespace app\forms;
 
-class EditPracownicyForm {
+class PracownicyEditForm {
 
     //employee data
     public $imie;
     public $nazwisko;
- 
+  
     public $email;
     
-    public $pracownicyID;
+    public $id_pracownik;
    
+
 }

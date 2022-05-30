@@ -1,26 +1,28 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-05-18 21:38:10
+/* Smarty version 4.1.0, created on 2022-05-22 11:06:22
   from 'C:\xampp\htdocs\anwensklep\app\views\about.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_62854b22d5eba1_60092788',
+  'unifunc' => 'content_6289fd0eea7b90_87412632',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '64313ee2c574c99b338128a1ea40be9502ad9d77' => 
     array (
       0 => 'C:\\xampp\\htdocs\\anwensklep\\app\\views\\about.tpl',
-      1 => 1652902689,
+      1 => 1653210378,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:navbar.tpl' => 1,
+    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_62854b22d5eba1_60092788 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6289fd0eea7b90_87412632 (Smarty_Internal_Template $_smarty_tpl) {
 ?><<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,34 +55,9 @@ function content_62854b22d5eba1_60092788 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 
 <body>
-	<!-- Fixed navbar -->
-	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
-		<div class="container">
-			<div class="navbar-header">
-				<!-- Button for smallest screens -->
-				
-		</div>
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav pull-right">
-					<li class="active"><a href="#">SKLEP</a></li>
-                                    
-                                         <li><a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>"about"),$_smarty_tpl ) );?>
-">Dlaczego pielegnować?</a></li>
-					
-                                        <li><a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>"produkty"),$_smarty_tpl ) );?>
-">PRODUKTY</a></li>
-                                         <li><a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>"koszyk"),$_smarty_tpl ) );?>
-">KOSZYK</a></li>
-					
-					<li><a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>"tajne"),$_smarty_tpl ) );?>
-">TAJNE</a></li>
-					<li><a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>"loginShow"),$_smarty_tpl ) );?>
-">Zaloguj/ Wyloguj</a></li>
-                                       
-				</ul>
-			</div><!--/.nav-collapse -->
-		</div>
-	</div> 
+		<!-- Fixed navbar -->
+	<?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 	<!-- /.navbar -->
 
 	<header id="head" class="secondary"></header>
@@ -124,61 +101,9 @@ function content_62854b22d5eba1_60092788 (Smarty_Internal_Template $_smarty_tpl)
 	</div>	<!-- /container -->
 	
 
-	<footer id="footer" class="top-space">
 
-		<div class="footer1">
-			<div class="container">
-				<div class="row">
-					
-					<div class="col-md-3 widget">
-						<h3 class="widget-title">Contact</h3>
-						<div class="widget-body">
-							<p>+234 23 9873237<br>
-								<a href="mailto:#">some.email@somewhere.com</a><br>
-								<br>
-								
-							</p>	
-						</div>
-					</div>
-
-				
-
-				</div> <!-- /row of widgets -->
-			</div>
-		</div>
-
-		<div class="footer2">
-			<div class="container">
-				<div class="row">
-					
-					<div class="col-md-6 widget">
-						<div class="widget-body">
-							<p class="simplenav">
-								<a href="#">Strona główna</a> | 
-								<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>"about"),$_smarty_tpl ) );?>
-">Dlaczego pielegnować?</a> |
-								<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>"produkty"),$_smarty_tpl ) );?>
-">Produkty</a> |
-								<a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>"tajne"),$_smarty_tpl ) );?>
-">tajne</a> |
-								<b><a href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>"loginShow"),$_smarty_tpl ) );?>
-">Zaloguj</a></b>
-							</p>
-						</div>
-					</div>
-
-					<div class="col-md-6 widget">
-						<div class="widget-body">
-							<p class="text-right">
-								Copyright &copy; 2014, Your name. Designed by <a href="http://gettemplate.com/" rel="designer">gettemplate</a> 
-							</p>
-						</div>
-					</div>
-
-				</div> <!-- /row of widgets -->
-			</div>
-		</div>
-	</footer>	
+	<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 		
 
 
